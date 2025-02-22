@@ -107,5 +107,34 @@ body {
 }#box7{
     grid-column: span 2 ;
 }
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack left and right divs vertically */
+        gap: 10px; /* Reduce gap for mobile */
+    }
+
+    .left {
+        flex-basis: auto; /* Allow left div to take natural height */
+        width: 100%; /* Full width on mobile */
+    }
+
+    .right {
+        grid-template-rows: repeat(7, 1fr); /* Stack all boxes vertically */
+        grid-template-columns: 1fr; /* Single column layout */
+        height: auto; /* Allow height to adjust based on content */
+        gap: 10px; /* Increase gap for better spacing */
+    }
+
+    .box {
+        grid-row: span 2 !important; /* Reset grid-row span */
+        grid-column: span 1 !important; /* Reset grid-column span */
+        height: auto; /* Allow height to adjust based on width */
+        aspect-ratio: 1 / 1; /* Ensure boxes are square */
+    }
+
+    .heading {
+        font-size: 2rem; /* Further reduce font size for smaller screens */
+    }
+}
 
 
